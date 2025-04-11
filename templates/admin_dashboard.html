@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NewGen Library | Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      height: 100vh;
+    }
+
+    nav {
+      width: 240px;
+      background: #2f3542;
+      color: #fff;
+      padding-top: 2rem;
+      position: fixed;
+      height: 100%;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      padding: 15px 25px;
+      transition: background 0.2s ease-in-out;
+    }
+
+    nav ul li:hover {
+      background: #57606f;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li a i {
+      margin-right: 12px;
+    }
+
+    .container {
+      margin-left: 240px;
+      padding: 3rem;
+      flex-grow: 1;
+    }
+
+    h2 {
+      color: #2f3542;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="/add-book"><i class="fas fa-book-medical"></i> Add Book</a></li>
+      <li><a href="/view-reservations"><i class="fas fa-calendar-check"></i> View Reservations</a></li>
+      <li><a href="{{ url_for('add_vendor') }}"><i class="fas fa-truck"></i> Add Vendor</a></li>
+      <li><a href="/admin/vendors"><i class="fas fa-warehouse"></i> Manage Vendors</a></li>
+      <li><a href="{{ url_for('manage_fines') }}"><i class="fas fa-money-bill-wave"></i> Manage Fines</a></li>
+      <li><a href="{{ url_for('add_member') }}"><i class="fas fa-user-plus"></i> Add Member</a></li>
+      <li><a href="{{ url_for('view_members') }}"><i class="fas fa-users"></i> View Members</a></li>
+      <li><a href="{{ url_for('view_authors') }}"><i class="fas fa-pen-nib"></i> Author List</a></li>
+      <li><a href="{{ url_for('view_publishers') }}"><i class="fas fa-building"></i> Publisher List</a></li>
+      <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>👋 Hello and Welcome, Admin!</h2>
+    <div class="card">
+      <p>Use the navigation on the left to manage the library system. You can add books, manage vendors, view reservations, and more.</p>
+    </div>
+  </div>
+
+</body>
+</html>

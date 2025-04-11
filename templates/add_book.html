@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NewGen Library | Add Book</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 2rem;
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2980b9;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 0.6rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #3498db;
+      color: #fff;
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2471a3;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .icon-left {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><i class="fas fa-book-medical icon-left"></i>Add New Book</h2>
+    <form method="POST">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" id="author" required>
+
+      <label for="publisher">Publisher:</label>
+      <input type="text" name="publisher" id="publisher" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" id="quantity" required>
+
+      <button type="submit"><i class="fas fa-plus-circle icon-left"></i>Add Book</button>
+    </form>
+    <a href="{{ url_for('admin_dashboard') }}" class="back-link"><i class="fas fa-arrow-left icon-left"></i>Back to Dashboard</a>
+  </div>
+</body>
+</html>
